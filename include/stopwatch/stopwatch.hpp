@@ -6,9 +6,9 @@ namespace sw
     class stopwatch
     {
     public:
-        stopwatch(const bool auto_start = false)
+        stopwatch( const bool auto_start = false )
         {
-            if(auto_start)
+            if( auto_start )
                 start();
         }
 
@@ -42,6 +42,19 @@ namespace sw
             else
             {
                 return std::chrono::duration_cast<std::chrono::milliseconds>( end_ - start_ );
+            }
+        }
+
+        [[nodiscard]] std::chrono::microseconds elapsed_micro_seconds() const
+        {
+            if( started_ )
+            {
+                std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
+                return std::chrono::duration_cast<std::chrono::microseconds>( now - start_ );
+            }
+            else
+            {
+                return std::chrono::duration_cast<std::chrono::microseconds>( end_ - start_ );
             }
         }
 
