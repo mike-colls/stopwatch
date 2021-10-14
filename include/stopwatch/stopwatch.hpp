@@ -6,6 +6,12 @@ namespace sw
     class stopwatch
     {
     public:
+        stopwatch(const bool auto_start = false)
+        {
+            if(auto_start)
+                start();
+        }
+
         void start()
         {
             start_ = std::chrono::high_resolution_clock::now();
