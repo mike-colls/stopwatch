@@ -8,8 +8,6 @@ target_sources(stopwatch PRIVATE ${headers})
 
 target_include_directories(stopwatch PUBLIC include)
 
-target_link_libraries(stopwatch PRIVATE)
-
 target_compile_features(stopwatch PRIVATE cxx_std_20)
 
 if(MSVC)
