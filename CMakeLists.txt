@@ -1,3 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(stopwatch VERSION 0.0.0 LANGUAGES CXX)
+
 add_library(stopwatch)
 
 file(GLOB sources CONFIGURE_DEPENDS src/*.cpp)

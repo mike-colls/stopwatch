@@ -30,7 +30,7 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
             },
-            "warnings": {} // TODO: Added build presets for unity builds && LTO - simplify the CMakeLists.txt
+            "warnings": {}
         },
         {
             "name": "x64-windows-release",
