@@ -1,10 +1,5 @@
 {
     "version": 3,
-    "cmakeMinimumRequired": {
-        "major": 3,
-        "minor": 20,
-        "patch": 0
-    },
     "configurePresets": [
         {
             "name": "base",
@@ -14,33 +9,32 @@
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/presets/${presetName}/install"
             },
             "warnings": {
-                "dev": false
+                "dev": true
             }
         },
         {
-            "name": "x64-windows-debug",
+            "name": "x64-debug",
             "inherits": [
                 "base"
             ],
-            "generator": "Visual Studio 16 2019",
+            "generator": "Ninja",
             "architecture": {
                 "value": "x64",
-                "strategy": "set"
+                "strategy": "external"
             },
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
-            },
-            "warnings": {}
+            }
         },
         {
-            "name": "x64-windows-release",
+            "name": "x64-release",
             "inherits": [
                 "base"
             ],
-            "generator": "Visual Studio 16 2019",
+            "generator": "Ninja",
             "architecture": {
                 "value": "x64",
-                "strategy": "set"
+                "strategy": "external"
             },
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
