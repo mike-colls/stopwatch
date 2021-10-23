@@ -1,5 +1,6 @@
 #pragma once
 #include <chrono>
+#include <cassert>
 
 namespace mc
 {
@@ -20,6 +21,7 @@ namespace mc
 
         void stop()
         {
+            assert(started_);
             end_ = std::chrono::high_resolution_clock::now();
             started_ = false;
         }
